@@ -32,7 +32,7 @@ function App() {
           >
             <option value="smart">Мемо без лишних useCallback</option>
             <option value="not_smart">Мемо с лишним useCallback</option>
-            <option value="dumb">Вообще без мемозиации</option>
+            <option value="dumb">Вообще без мемоизации</option>
           </select>
         </div>
         <div className="Padding">
@@ -58,7 +58,7 @@ export default App;
 const CountContext = createContext(0);
 
 /**
- * Умный memo. Мемозиируем примитиные пропсы
+ * Умный memo. Мемоизируем примитиные пропсы
  * Внутри к button не используем useCallback
  */
 const SmartMemo = memo(({ level, maxLevel }) => {
@@ -89,7 +89,7 @@ const SmartMemo = memo(({ level, maxLevel }) => {
 });
 
 /**
- * Не такой умный memo =) Мемозиируем примитиные пропсы
+ * Не такой умный memo =) Мемоизируем примитиные пропсы
  * Внутри к button используем useCallback, который многие считают бесполезным
  */
 const NotSmartMemo = memo(({ level, maxLevel }) => {
@@ -118,7 +118,7 @@ const NotSmartMemo = memo(({ level, maxLevel }) => {
 });
 
 /**
- * Никакой мемозиации вообще
+ * Никакой мемоизации вообще
  */
 const Dumb = ({ level, maxLevel }) => {
   const count = useContext(CountContext);
